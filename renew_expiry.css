@@ -1,0 +1,261 @@
+/* --- STYLISH RENEW_EXPIRY.CSS --- */
+
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Glass Container --- */
+.container {
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    
+    /* Responsive Table ke liye sabse important */
+    overflow-x: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(3, 233, 244, 0.3);
+}
+
+/* --- Back Button --- */
+.back-btn {
+    display: inline-block;
+    margin: 0 10px 20px 0;
+    color: #03e9f4;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 15px;
+    border: 1px solid rgba(3, 233, 244, 0.5);
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(3, 233, 244, 0.2);
+    color: #fff;
+}
+
+/* --- Table Styling --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    min-width: 800px; /* Table ko scroll-friendly banata hai */
+    /* Inline HTML styles ko reset karega */
+    border: none;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    vertical-align: middle;
+    /* Inline HTML styles ko reset karega */
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+thead th {
+    font-size: 0.9rem;
+    color: #03e9f4; /* Accent color */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+tbody td {
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+tbody td:nth-child(1) { /* Service Name */
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Days Remaining Column */
+tbody td:nth-child(4) {
+    font-weight: 600;
+}
+/* 'Expired' text ko red karega */
+/* (Iske liye PHP mein class lagana behtar hai, but yeh bhi kaam karega) */
+tbody td:has(> span[style*="color: red;"]) {
+    color: #ffc107; /* In-process message ko yellow karega */
+}
+
+/* --- Buttons in Table --- */
+table button {
+    display: inline-block;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: #141e30;
+    background: #03e9f4; /* Default: Cyan (Renew) */
+    text-align: center;
+}
+
+table button:hover {
+    background: #fff;
+    box-shadow: 0 0 15px rgba(3, 233, 244, 0.5);
+}
+
+/* Download Button (jo 'a' tag ke andar hai) */
+table a button {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+table a button:hover {
+    background: #fff;
+    color: #141e30;
+    box-shadow: none;
+}
+
+/* --- Order Success Modal --- */
+/* (Yeh styles services.css aur user_orders.css se 100% match karte hain) */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2001;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    background: #1a2b42;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* JS 'show' class ke liye */
+.modal-overlay.show,
+.modal.show {
+    display: block;
+}
+
+.modal .modal-content {
+    padding: 30px;
+}
+.modal .icon img {
+    width: 80px;
+    height: 80px;
+}
+.modal h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 15px 0;
+    text-shadow: none;
+}
+.modal .message {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+.modal .btn-primary {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #03e9f4;
+    color: #141e30;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+.modal .btn-primary:hover {
+    background: #fff;
+}
+.modal .close-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ccc;
+    padding: 10px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.modal .close-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .back-btn {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+}

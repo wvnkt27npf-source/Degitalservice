@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /admin_dashboard.php
+Disallow: /admin_*.php
+Disallow: /add_*.php
+Disallow: /edit_*.php
+Disallow: /delete_*.php
+Disallow: /config.php
+Disallow: /vendor/
+Disallow: /phpqrcode/
+Disallow: /error_log
+
+Sitemap: https://www.degitalservice.com/sitemap.php
