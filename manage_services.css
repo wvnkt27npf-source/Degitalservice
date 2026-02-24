@@ -1,0 +1,282 @@
+/* General Body and Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Container to center content */
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid #ddd; /* Full border for container */
+}
+
+
+/* Style for the "View Demo" link */
+.demo-link {
+    display: inline-block;  /* Makes the link a block-level element for better styling */
+    padding: 10px 20px;     /* Adds padding inside the link for a button-like appearance */
+    background-color: #4CAF50;  /* A nice green color */
+    color: #fff;            /* White text color */
+    font-weight: bold;      /* Bold text */
+    text-decoration: none;  /* Removes underline */
+    border-radius: 5px;     /* Rounded corners */
+    font-size: 12px;        /* Set font size */
+    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 15px;
+}
+
+/* Hover effect when the user hovers over the "View Demo" link */
+.demo-link:hover {
+    background-color: #45a049; /* Darker green when hovered */
+    transform: scale(1.05);     /* Slightly enlarge the button when hovered */
+}
+
+/* Remove any lines or borders below the link */
+.demo-link:focus {
+    outline: none;  /* Removes the focus outline (if the link is clicked or tabbed) */
+}
+
+/* Remove any bottom border or line */
+.demo-link:active {
+    transform: scale(1); /* Resets the scaling when clicked */
+}
+
+/* Back Button Style */
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Heading Style */
+h2 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Search Bar Style */
+#search {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ccc; /* Full border for search */
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+#search:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Add Service Button */
+.add-service-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #007bff; /* Full border for button */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.add-service-btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3; /* Border changes on hover */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #ddd; /* Full border for table */
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd; /* Full border for cells */
+}
+
+table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Image in Table */
+table td img {
+    max-width: 50px;
+    border-radius: 4px;
+}
+
+/* Table Actions - Edit/Delete Buttons */
+table td a {
+    display: inline-block;
+    padding: 2px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #28a745; /* Full border for buttons */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+table td a:hover {
+    background-color: #218838;
+    border-color: #218838; /* Border changes on hover */
+}
+
+table td a.delete {
+    background-color: #dc3545;
+    border: 1px solid #dc3545; /* Full border for delete button */
+}
+
+table td a.delete:hover {
+    background-color: #c82333;
+    border-color: #c82333; /* Border changes on hover */
+}
+
+/* Mobile Fixes */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    #search {
+        width: 100%;
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    /* Mobile table fix */
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto; /* Horizontal scroll for tables on small screens */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile */
+    }
+
+    table th, table td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    table td img {
+        max-width: 40px;
+    }
+
+    .add-service-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    table th, table td {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    table td img {
+        max-width: 30px;
+    }
+
+    .add-service-btn {
+        font-size: 14px;
+    }
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Bulk Import and Export Buttons */
+.bulk-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.bulk-options form {
+    display: inline-block;
+}
+
+.bulk-options button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.bulk-options button:hover {
+    background-color: #45a049;
+}
+
+.export-btn {
+    padding: 8px 16px;
+    background-color: #008CBA;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.export-btn:hover {
+    background-color: #007B8D;
+}
+
+input[type="file"] {
+    padding: 5px;
+}
+
+input[type="text"] {
+    padding: 5px;
+    width: 250px;
+}

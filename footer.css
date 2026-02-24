@@ -1,0 +1,114 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Main Body */
+body {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #000000e6; /* semi-transparent background */
+    backdrop-filter: blur(15px); /* frosted glass effect */
+    padding: 40px 20px;
+    color: white;
+    font-size: 14px;
+    position: relative;
+    border-radius: 10px; /* Optional: rounded corners for a more polished look */
+}
+
+/* Footer Content (columns) */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Footer Columns */
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ff4d00; /* bright yellow for heading */
+    text-transform: uppercase;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin: 10px 0;
+}
+
+.footer-column ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.footer-column ul li a:hover {
+    color: #ffcc00; /* change to bright yellow on hover */
+}
+
+/* Contact and Social Links */
+.footer-column p {
+    margin: 10px 0;
+}
+
+.footer-column a {
+    display: inline-block;
+    margin: 10px 5px;
+    text-decoration: none;
+    color: orange;
+}
+
+.footer-column a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-column a img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.8); /* darker bottom part for separation */
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+/* Add glow effect to the footer */
+footer h3,
+footer p {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}

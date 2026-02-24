@@ -1,0 +1,185 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Table Container */
+.table-container {
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Message Display */
+.message {
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #f0f8ff;
+    border: 1px solid #b0e0e6;
+    color: #1e90ff;
+    border-radius: 5px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+td {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+a, button {
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Block & Unlock User Buttons */
+.block-btn, .unlock-btn {
+    color: #fff;
+    background-color: #dc3545;
+    transition: background-color 0.3s ease;
+}
+
+.block-btn:hover, .unlock-btn:hover {
+    background-color: #c82333;
+}
+
+/* Impersonate User Button */
+.impersonate-btn {
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.impersonate-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Change Password Button */
+.change-password-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.change-password-btn:hover {
+    background-color: #218838;
+}
+
+/* Popup Form Styling */
+.block-user-form, .update-password-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    display: none;
+}
+
+h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* Form Input Styles */
+input[type="password"], input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Close Button */
+button.close {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.close:hover {
+    background-color: #5a6268;
+}
+
+/* Modal Form Close Button */
+.block-user-form button.close,
+.update-password-form button.close {
+    background-color: #dc3545;
+    margin-top: 10px;
+}
+
+.block-user-form button.close:hover,
+.update-password-form button.close:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table-container {
+        width: 95%;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .block-user-form, .update-password-form {
+        width: 80%;
+    }
+}

@@ -1,0 +1,94 @@
+body {
+            font-family: Arial, sans-serif;
+            background: white;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+
+        .otp-box {
+            background-color: #e1f7e1;
+            padding: 10px;
+            color: green;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            background-color: #ffdddd;
+            color: #d8000c;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Success Popup */
+        #successPopup {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        #successPopup img {
+            width: 120px;
+            height: auto;
+        }
+        #successPopup button {
+            background-color: #fff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #successPopup button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Hide the Resend OTP button after successful verification */
+        #resendOtpButton {
+            display: block;
+        }
+
+        #successPopup .ok-button {
+            display: none;
+        }

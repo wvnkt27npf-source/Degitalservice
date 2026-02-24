@@ -1,0 +1,123 @@
+/* --- UPDATED STYLISH CATEGORY.CSS --- */
+
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: #fff;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(3, 233, 244, 0.3);
+}
+
+/* --- Category Grid --- */
+.category-grid {
+    display: grid;
+    /* --- FIX: PC par 4x4 --- */
+    /* Default (PC) layout 4 columns */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
+
+/* --- Category Card --- */
+.category {
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+    
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(3, 233, 244, 0.5), 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.category img {
+    width: 100%;
+    /* --- FIX: Image cut Rahi hai --- */
+    /* height: 180px; <-- HATA DIYA GAYA */
+    /* object-fit: cover; <-- HATA DIYA GAYA */
+    /* Ab image poori dikhegi */
+    
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.category p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+}
+
+/* Agar koi category na mile to message */
+.category-grid > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #ccc;
+    padding: 20px;
+    grid-column: 1 / -1; 
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* --- Responsive Design --- */
+
+/* Tablet (Optional - 3 column layout) */
+@media (max-width: 1024px) {
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile (600px se neeche) */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .category-grid {
+        /* --- FIX: Mobile par 2x2 --- */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px; /* Mobile par thoda kam gap */
+    }
+
+    .category {
+        padding: 15px; /* Mobile par thodi kam padding */
+    }
+
+    .category img {
+        margin-bottom: 15px;
+    }
+}

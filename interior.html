@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before/After Image Slider</title>
+    <style>
+        /* Global Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container Styling */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        /* Iframe Styling */
+        iframe {
+            width: 100%;
+            max-width: 100%;
+            height: 80vh;
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* Adding a header to make it more attractive */
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Media Queries for responsiveness */
+        @media screen and (max-width: 768px) {
+            iframe {
+                height: 100vh;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            iframe {
+                height: 50vh;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Before & After Image Slider</h1>
+
+        <!-- JuxtaposeJS Embed iframe -->
+        <iframe frameborder="0" class="juxtapose" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=8aa7b180-1076-11f0-9397-d93975fe8866"></iframe>
+    </div>
+
+</body>
+
+</html>

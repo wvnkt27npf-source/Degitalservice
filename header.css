@@ -1,0 +1,265 @@
+/* --- STYLISH HEADER.CSS --- */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Arial', sans-serif;
+    /* Background body par set hoga, header uske upar float karega */
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: #000000;
+    min-height: 100vh;
+}
+
+/* --- Sticky Header --- */
+header.sticky-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    
+    /* Glassmorphism theme */
+    background: rgba(17, 25, 40, 0.85); /* Thoda dark glass */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Header ka main container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: auto;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 80px; /* Fixed height */
+}
+
+/* --- Logo --- */
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* 80px header se thoda chhota */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* --- Mobile Menu (Default) --- */
+
+.menu-toggle {
+    display: block; /* Mobile par dikhega */
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Navigation Menu */
+.nav-links {
+    display: none; /* Default mein hide */
+    list-style: none;
+    flex-direction: column;
+    
+    /* Full-screen menu banega */
+    position: absolute;
+    top: 80px; /* Header ke neeche */
+    left: 0;
+    width: 100%;
+    background: #1a2b42; /* Dark solid background */
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-links.active {
+    display: flex; /* JS se show hoga */
+}
+
+.nav-links li {
+    width: 100%;
+    text-align: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 14px 20px;
+    display: block;
+    width: 100%;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(3, 233, 244, 0.1);
+    color: #03e9f4; /* Accent color */
+}
+
+/* Welcome Message (Mobile) */
+.welcome {
+    color: #03e9f4;
+    font-style: italic;
+    padding: 14px 20px;
+    font-size: 0.9rem;
+}
+
+/* Phone Number (Mobile) */
+li a[href^="tel:"] {
+    color: #03e9f4;
+}
+
+/* Dropdown (Mobile) */
+.dropdown-content {
+    display: none; /* Mobile par hover kaam nahi karta */
+    position: static;
+    background: rgba(0,0,0,0.2);
+    padding: 0;
+}
+
+/* Mobile par dropdown ko hamesha khula rakhega (jab active ho) */
+.nav-links.active .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding-left: 40px; /* Sub-items ko indent karega */
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* --- Desktop Menu (769px aur usse upar) --- */
+@media (min-width: 769px) {
+    /* Header ko modify karega */
+    header.sticky-header {
+        /* Ab header-container ki zaroorat nahi, header hi container hai */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: auto;
+        margin: 0 auto;
+        height: 80px;
+        padding: 0 20px;
+        
+        /* Background properties sticky-header par hi rahenge */
+    }
+
+    /* .header-container ko reset karega */
+    .header-container {
+        padding: 0;
+        height: auto;
+        margin: 0;
+        /* Sirf logo ko rakhega */
+        justify-content: flex-start;
+    }
+
+    .menu-toggle {
+        display: none; /* Hamburger icon hide karega */
+    }
+
+    /* Nav ko reset karega */
+    nav {
+        position: static;
+        width: auto;
+        background: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row; /* Horizontal */
+        align-items: center;
+        position: static;
+        width: auto;
+        background: none;
+        padding: 0;
+        border-top: none;
+    }
+
+    .nav-links.active {
+        display: flex; /* Hamesha flex rahega */
+    }
+
+    .nav-links li {
+        width: auto;
+        margin-left: 20px;
+        position: relative; /* Dropdown ke liye */
+    }
+    
+    .nav-links a {
+        display: inline-block;
+        width: auto;
+        padding: 10px;
+    }
+
+    /* Welcome Message (Desktop) */
+    .welcome {
+        color: #ccc;
+        font-style: italic;
+        padding: 10px;
+        font-size: 1rem;
+        margin-right: 10px;
+    }
+
+    /* Phone Number (Desktop) */
+    li a[href^="tel:"] {
+        background: rgba(3, 233, 244, 0.1);
+        border: 1px solid rgba(3, 233, 244, 0.5);
+        border-radius: 8px;
+        color: #03e9f4;
+    }
+    li a[href^="tel:"]:hover {
+        background: rgba(3, 233, 244, 0.3);
+        color: #fff;
+    }
+    
+    /* Dropdown (Desktop) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 110%; /* Link ke thoda neeche */
+        right: 0;
+        
+        /* Glassmorphism Dropdown */
+        background: rgba(17, 25, 40, 0.9);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        min-width: 220px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        padding: 10px;
+        z-index: 1001;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block; /* Hover par show karega */
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 12px 15px;
+        color: #ccc;
+        white-space: nowrap;
+        font-size: 1rem; /* Reset mobile style */
+        padding-left: 15px; /* Reset mobile style */
+    }
+
+    .dropdown-content a:hover {
+        background: rgba(3, 233, 244, 0.1);
+        color: #03e9f4;
+        border-radius: 5px;
+    }
+}

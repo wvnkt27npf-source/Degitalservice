@@ -1,0 +1,225 @@
+/* General Reset & Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Modern Font */
+    background: linear-gradient(135deg, #b3ffec, #243b55);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1200px;
+    width: 95%;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* Modern Shadow */
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #111827;
+    letter-spacing: -0.5px;
+}
+
+/* Navigation & Back Buttons */
+.back-btn, .back-btn2 {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #4b5563;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.back-btn:hover, .back-btn2:hover {
+    background-color: #f9fafb;
+    border-color: #9ca3af;
+    color: #1f2937;
+    transform: translateY(-1px);
+}
+
+/* Table Container for Scroll */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+/* Table Styles for Full Border */
+table {
+    width: 100%;
+    border-collapse: collapse; /* डबल बॉर्डर को हटाने के लिए */
+    border: 1px solid #d1d5db; /* टेबल के चारों तरफ बॉर्डर */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #d1d5db; /* हर सेल के चारों तरफ बॉर्डर */
+}
+
+th {
+    background-color: #f9fafb;
+    color: #374151;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    border-top: none;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background-color: #f9fafb; /* Subtle hover effect on rows */
+}
+
+/* Status Badges (Pill Design) */
+.status {
+    display: inline-block;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 9999px; /* Fully rounded pills */
+    font-size: 12px;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+
+/* Status Colors (Softer, Modern Palette) */
+.status.pending {
+    background-color: #fff7ed;
+    color: #c2410c;
+    border: 1px solid #ffedd5;
+}
+
+.status.completed {
+    background-color: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #dcfce7;
+}
+
+.status.cancelled-by-user, 
+.status.cancelled-by-us, 
+.status.cancelled-by-government {
+    background-color: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fee2e2;
+}
+
+.status.we-are-working {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #dbeafe;
+}
+
+.status.document-submitted {
+    background-color: #f0f9ff;
+    color: #0369a1;
+    border: 1px solid #e0f2fe;
+}
+
+/* Buttons */
+button, .button {
+    background-color: #2563eb; /* Royal Blue */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, .button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+button.delete, .button.delete {
+    background-color: #dc2626;
+}
+
+button.delete:hover, .button.delete:hover {
+    background-color: #b91c1c;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+/* DataTables Overrides (If using DataTables) */
+.dataTables_wrapper .dataTables_length select,
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #eff6ff !important;
+    border: 1px solid #2563eb !important;
+    color: #2563eb !important;
+    border-radius: 4px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 10px auto;
+        padding: 15px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+
+    /* Mobile Card View for Tables (Optional but better for mobile) */
+    /* If you want pure table scroll, keep table-container overflow logic. */
+    
+    th, td {
+        padding: 12px 10px;
+    }
+    
+    button, .button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}

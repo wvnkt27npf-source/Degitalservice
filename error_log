@@ -1,0 +1,10 @@
+[04-Feb-2026 13:32:09 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /home/degitals/public_html/config.php:8
+Stack trace:
+#0 /home/degitals/public_html/index.php(3): include()
+#1 {main}
+  thrown in /home/degitals/public_html/config.php on line 8
+[04-Feb-2026 13:32:10 UTC] PHP Fatal error:  Uncaught Error: Class "mysqli" not found in /home/degitals/public_html/config.php:8
+Stack trace:
+#0 /home/degitals/public_html/index.php(3): include()
+#1 {main}
+  thrown in /home/degitals/public_html/config.php on line 8
